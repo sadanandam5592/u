@@ -8,7 +8,7 @@ public class J {
                         val details = (it.exceptionDetails["exception"] as HashMap<*, *>)["details"] as HashMap<*, *>
                         this.add(it.name + ":")
                         this.add((details["error"] as String))
-                        (details["errors"] as ArrayList<String>).forEach { t -> this.add(t) }
+                        (details["errors"] as ArrayList<*>).forEach { t -> this.add(t as String) }
                     }
                 }
             }
